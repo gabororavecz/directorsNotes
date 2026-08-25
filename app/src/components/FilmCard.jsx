@@ -25,6 +25,10 @@ function FilmCard({ film }) {
           {film.country} · {film.year}
         </p>
 
+        <p className="film-card__synopsis">
+          {film.synopsis}
+        </p>
+
         <div className="film-card__themes">
           {film.themes.map((theme) => (
             <span key={theme}>{theme}</span>

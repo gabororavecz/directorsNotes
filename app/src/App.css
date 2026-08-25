@@ -37,7 +37,7 @@
 
 .film-card__poster {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 3 / 4; /* This makes every poster the same 3:4 portrait ratio, regardless of the source image dimensions. */
   overflow: hidden;
   background: #e5e5e5;
 }
@@ -45,8 +45,9 @@
 .film-card__poster img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover;  /* means the image can be cropped rather than distorted. */
   display: block;
+  transition: transform 0.5s ease;
 }
 
 .film-card__poster-placeholder {
@@ -59,21 +60,21 @@
 }
 
 .film-card__content {
-  padding-top: 14px;
+  padding-top: 16px; /* This creates space between the poster and title */ 
 }
 
 .film-card__form {
+   margin: 0 0 8px;
   font-size: 11px;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 7px;
+  letter-spacing: 0.12em;
 }
 
 .film-card h3 {
+  margin: 0 0 7px;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.2;
-  margin-bottom: 8px;
 }
 
 .film-card__meta {
@@ -88,9 +89,21 @@
 }
 
 .film-card__themes span {
-  font-size: 11px;
-  border: 1px solid #bbb;
   padding: 4px 8px;
+  border: 1px solid #aaa;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.film-card:hover .film-card__poster img {
+  transform: scale(1.03); /* When you hover over a film, the image subtly zooms by 3%. */ 
+}
+
+.film-card__synopsis {
+  margin: 0 0 16px;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 @media (max-width: 900px) {
@@ -111,4 +124,68 @@
   .archive-rail__films {
     grid-template-columns: 1fr;
   }
+}
+
+.archive-rail__controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.archive-rail__filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.archive-rail__filters button,
+.archive-rail__options button,
+.archive-rail__options select {
+  padding: 8px 12px;
+  border: 1px solid #aaa;
+  background: transparent;
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.archive-rail__filters button.active,
+.archive-rail__options button.active {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+.archive-rail__options {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.archive-rail__options label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* list outlook */
+
+.archive-rail__films--list { 
+  grid-template-columns: 1fr;
+}
+
+.archive-rail__films--list .film-card {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 24px;
+}
+
+.archive-rail__films--list .film-card__poster {
+  aspect-ratio: 3 / 2;
+}
+
+.archive-rail__films--list .film-card__content {
+  padding-top: 0;
 }
