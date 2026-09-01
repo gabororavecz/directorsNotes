@@ -11,6 +11,7 @@ function FilmCard({
       onClick={() => onSelect(film)}
     >
       {/* Film poster */}
+      {isSelected && <div className="film-card__featured-label">Featured</div>} {/* Displays a Featured label when this film is currently shown in the main feature area. */}
       <div className="film-card__poster">
         {film.poster ? (
           <img src={film.poster} alt={film.posterAlt} />

@@ -1,69 +1,84 @@
-:root {
-  --dn-black: #1c1c1c;
-  --dn-white: #ffffff;
-  --dn-green: #00ff73;
-  --dn-grey: #777777;
-  --dn-line: #d4d4d4;
-}
+/* =========================================================
+   DIRECTORS NOTES COLOURS
+   ========================================================= */
 
+:root {
+  --dn-paper: #f2f0ea;
+  --dn-ink: #191813;
+  --dn-green: #00ff73;
+  --dn-grey: #aaa69d;
+  --dn-light-grey: #dedbd3;
+}
 
 
 /* =========================================================
    ARCHIVE RAIL
    ========================================================= */
 
-/*
-  Main container for the archive section.
-*/
 .archive-rail {
-  padding: 80px 40px;
-  background: var(--dn-white);
-  color: var(--dn-black);
+  
+  padding: 100px 40px;
+  background: var(--dn-paper);
+  color: var(--dn-ink);
 }
 
 
 /* =========================================================
-   INTRO
+   INTRODUCTION
    ========================================================= */
 
 .archive-rail__intro {
-  max-width: 700px;
-  margin-bottom: 45px;
+  max-width: 850px;
+  margin-bottom: 55px;
 }
 
-
-/*
-  Small section label.
-*/
 .archive-rail__intro p:first-child {
-  margin: 0 0 12px;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--dn-green);
-  font-weight: 600;
-}
-
-
-/*
-  Main heading.
-*/
-.archive-rail__intro h2 {
   margin: 0 0 16px;
-  font-size: 48px;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.archive-rail__intro h2 {
+  margin: 0 0 20px;
+
+  font-size: clamp(42px, 6vw, 76px);
   font-weight: 500;
-  line-height: 1.1;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.archive-rail__intro p:last-child {
+  max-width: 650px;
+  margin: 0;
+
+  font-size: 17px;
+  line-height: 1.6;
 }
 
 
-/*
-  Introductory description.
-*/
-.archive-rail__intro p:last-child {
-  margin: 0;
-  max-width: 620px;
-  font-size: 16px;
-  line-height: 1.6;
+/* =========================================================
+   SELECTION COUNT
+   ========================================================= */
+
+.selection-count {
+  display: inline-block;
+
+  margin: 0 0 30px;
+  padding: 8px 12px;
+
+  background: var(--dn-green);
+
+  color: var(--dn-ink);
+
+  font-size: 10px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 
@@ -71,111 +86,89 @@
    CONTROLS
    ========================================================= */
 
-/*
-  The controls sit between the introduction
-  and the selected film.
-*/
 .archive-rail__controls {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+
   gap: 30px;
 
-  margin-bottom: 35px;
-  padding-bottom: 18px;
+  margin-bottom: 45px;
+  padding: 18px 0;
 
-  border-bottom: 1px solid #aaa;
+  border-top: 1px solid var(--dn-ink);
+  border-bottom: 1px solid var(--dn-ink);
 }
 
 
-/*
-  Filter buttons.
-*/
+/* =========================================================
+   FILTERS
+   ========================================================= */
+
 .archive-rail__filters {
   display: flex;
-  align-items: center;
-  gap: 6px;
   flex-wrap: wrap;
+  gap: 8px;
 }
 
-
-/*
-  Individual filter button.
-*/
 .archive-rail__filters button {
-  padding: 8px 12px;
-  border: 1px solid var(--dn-black);
+  padding: 9px 14px;
+
+  border: 1px solid var(--dn-ink);
+
   background: transparent;
-  color: var(--dn-black);
+
+  color: var(--dn-ink);
 
   font-family: inherit;
   font-size: 10px;
+  font-weight: 600;
+
   text-transform: uppercase;
   letter-spacing: 0.08em;
 
   cursor: pointer;
 
-
   transition:
     background 0.2s ease,
-    color 0.2s ease,
-    border-color 0.2s ease;
+    color 0.2s ease;
 }
 
-
-/*
-  Active filter.
-*/
+.archive-rail__filters button:hover,
 .archive-rail__filters button.active {
-  background: var(--dn-green);
-  color: var(--dn-black);
-  border-color: var(--dn-green);
+  background: var(--dn-ink);
+  color: var(--dn-paper);
 }
 
 
-/*
-  Hover state for filters that aren't active.
-*/
-.archive-rail__filters button:hover:not(.active) {
-  border-color: #111;
-}
+/* =========================================================
+   SORT + DISPLAY OPTIONS
+   ========================================================= */
 
-
-/*
-  Sort + Grid/List controls.
-*/
 .archive-rail__options {
   display: flex;
   align-items: center;
-  gap: 7px;
-  flex-shrink: 0;
+  gap: 10px;
+
+  white-space: nowrap;
 }
 
-
-/*
-  "Sort" label.
-*/
 .archive-rail__options label {
-  margin-right: 3px;
-
   font-size: 10px;
+  font-weight: 600;
+
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
 }
 
-
-/*
-  Sort dropdown.
-*/
 .archive-rail__options select {
-  height: 32px;
+  padding: 8px 10px;
 
-  padding: 0 28px 0 10px;
-
-  border: 1px solid #aaa;
-  border-radius: 0;
+  border: 1px solid var(--dn-ink);
 
   background: transparent;
+
+  color: var(--dn-ink);
 
   font-family: inherit;
   font-size: 11px;
@@ -183,83 +176,59 @@
   cursor: pointer;
 }
 
-
-/*
-  Grid / List buttons.
-*/
 .archive-rail__options button {
-  height: 32px;
+  padding: 8px 11px;
 
-  padding: 0 11px;
-
-  border: 1px solid #aaa;
-  border-radius: 0;
+  border: 1px solid var(--dn-ink);
 
   background: transparent;
 
+  color: var(--dn-ink);
+
   font-family: inherit;
   font-size: 10px;
+  font-weight: 600;
+
   text-transform: uppercase;
   letter-spacing: 0.08em;
 
   cursor: pointer;
-
-  transition:
-    background 0.2s ease,
-    color 0.2s ease,
-    border-color 0.2s ease;
 }
 
-
-/*
-  Active Grid/List button.
-*/
+.archive-rail__options button:hover,
 .archive-rail__options button.active {
-  background: #111;
-  color: #fff;
-  border-color: #111;
+  background: var(--dn-ink);
+  color: var(--dn-paper);
 }
 
 
 /* =========================================================
-   FEATURED / SELECTED FILM
+   FEATURED FILM
    ========================================================= */
 
-/*
-  This is the film selected by clicking a FilmCard.
-
-  It appears ABOVE the archive cards.
-*/
 .featured-film {
   display: grid;
-  grid-template-columns: minmax(280px, 42%) 1fr;
-  gap: 50px;
+  grid-template-columns: minmax(300px, 0.9fr) minmax(300px, 1.1fr);
 
-  margin-bottom: 70px;
-  padding: 40px 0;
+  gap: 55px;
 
-  border-top: 1px solid var(--dn-black);
-  border-bottom: 1px solid var(--dn-black);
+  margin-bottom: 80px;
+  padding: 30px 0 70px;
+
+  border-bottom: 1px solid var(--dn-ink);
 }
 
-
-/*
-  Featured poster.
-*/
 .featured-film__poster {
-  width: 100%;
+  position: relative;
 
+  width: 100%;
   aspect-ratio: 3 / 4;
 
   overflow: hidden;
 
-  background: #e5e5e5;
+  background: var(--dn-light-grey);
 }
 
-
-/*
-  Featured poster image.
-*/
 .featured-film__poster img {
   width: 100%;
   height: 100%;
@@ -267,13 +236,14 @@
   display: block;
 
   object-fit: cover;
+
+  transition: transform 0.6s ease;
 }
 
+.featured-film:hover .featured-film__poster img {
+  transform: scale(1.02);
+}
 
-/*
-  Placeholder when the selected film
-  doesn't have a poster.
-*/
 .featured-film__poster-placeholder {
   width: 100%;
   height: 100%;
@@ -282,95 +252,68 @@
   align-items: center;
   justify-content: center;
 
-  font-size: 13px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
+.featured-film__content {
+  align-self: center;
 
-/*
-  Featured film information.
+  max-width: 650px;
+}
 
-  align-self: center keeps the information
-  vertically centred against the poster.
-*/
-.featured-film__content h2 {
+.featured-film__form {
   margin: 0 0 15px;
 
-  font-size: clamp(38px, 5vw, 64px);
-  font-weight: 500;
-  line-height: 1.05;
-}
-
-
-/*
-  Small film type label.
-*/
-.featured-film__form {
-  color: var(--dn-green);
+  font-size: 11px;
   font-weight: 600;
+
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
 }
 
-
-/*
-  Featured film title.
-*/
 .featured-film__content h2 {
-  margin: 0 0 12px;
+  margin: 0 0 18px;
 
-  font-size: clamp(36px, 5vw, 64px);
-
+  font-size: clamp(38px, 5vw, 70px);
   font-weight: 500;
-
-  line-height: 1.05;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
 }
 
-
-/*
-  Country and year.
-*/
 .featured-film__meta {
-  margin: 0 0 22px;
+  margin: 0 0 25px;
 
-  font-size: 13px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
-
-/*
-  Featured film synopsis.
-*/
 .featured-film__synopsis {
-  max-width: 580px;
+  max-width: 560px;
 
   margin: 0 0 25px;
 
-  font-size: 16px;
-
-  line-height: 1.6;
+  font-size: 17px;
+  line-height: 1.65;
 }
 
-
-/*
-  Featured film themes.
-*/
 .featured-film__themes {
   display: flex;
-  gap: 6px;
   flex-wrap: wrap;
+  gap: 7px;
 }
 
-
-/*
-  Individual theme.
-*/
 .featured-film__themes span {
-  padding: 5px 9px;
+  padding: 6px 9px;
 
-  border: 1px solid #aaa;
+  border: 1px solid var(--dn-grey);
 
   font-size: 10px;
 
   text-transform: uppercase;
-
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
 }
 
 
@@ -378,57 +321,82 @@
    FILM GRID
    ========================================================= */
 
-/*
-  Four films across on desktop.
-*/
 .archive-rail__films {
   display: grid;
 
   grid-template-columns: repeat(4, minmax(0, 1fr));
 
-  column-gap: 20px;
-  row-gap: 45px;
+  gap: 55px 20px;
 }
 
-
-/*
-  Individual film card.
-
-  cursor: pointer tells the visitor that
-  the card can be clicked.
-*/
-.film-card {
-  min-width: 0;
-  cursor: pointer;
-
-    border-top: 4px solid transparent;
-  padding-top: 8px;
-
-
-}
-
-.film-card:hover {
-  color: var(--dn-black);
-}
 
 /* =========================================================
-   FILM POSTER
+   FILM CARDS
+   ========================================================= */
+
+.film-card {
+  position: relative;
+
+  min-width: 0;
+
+  padding-top: 12px;
+
+  border-top: 1px solid var(--dn-ink);
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+/* Selected FeaturedFilm card */
+.film-card--selected {
+  border-top: 4px solid var(--dn-green);
+}
+
+
+/* =========================================================
+   POSTER
    ========================================================= */
 
 .film-card__poster {
-  width: 100%;
+  position: relative;
 
+  width: 100%;
   aspect-ratio: 3 / 4;
 
   overflow: hidden;
 
-  background: #e5e5e5;
+  background: var(--dn-light-grey);
 }
 
 
-/*
-  Film poster image.
-*/
+/* Slight dark overlay when hovering */
+.film-card__poster::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.08);
+
+  opacity: 0;
+
+  transition: opacity 0.3s ease;
+
+  pointer-events: none;
+}
+
+
+.film-card:hover .film-card__poster::after {
+  opacity: 1;
+}
+
+
+/* Poster image */
 .film-card__poster img {
   width: 100%;
   height: 100%;
@@ -437,21 +405,20 @@
 
   object-fit: cover;
 
-  transition: transform 0.45s ease;
+  transition:
+    transform 0.6s cubic-bezier(0.2, 0.6, 0.3, 1);
 }
 
 
-/*
-  Slight zoom when hovering over a card.
-*/
 .film-card:hover .film-card__poster img {
-  transform: scale(1.03);
+  transform: scale(1.045);
 }
 
 
-/*
-  Poster placeholder.
-*/
+/* =========================================================
+   POSTER PLACEHOLDER
+   ========================================================= */
+
 .film-card__poster-placeholder {
   width: 100%;
   height: 100%;
@@ -460,183 +427,224 @@
   align-items: center;
   justify-content: center;
 
-  font-size: 13px;
+  background: var(--dn-light-grey);
+
+  font-size: 10px;
+  font-weight: 600;
+
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 
 /* =========================================================
-   FILM CARD CONTENT
+   FILM CONTENT
    ========================================================= */
 
 .film-card__content {
-  padding-top: 15px;
+  padding-top: 18px;
 }
 
 
-/*
-  Film form.
-*/
+/* Film type */
 .film-card__form {
-  margin: 0 0 7px;
+  margin: 0 0 8px;
 
-  font-size: 10px;
+  font-size: 9px;
+  font-weight: 700;
 
   text-transform: uppercase;
-
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
 }
 
 
-/*
-  Film title.
-*/
+/* Film title */
 .film-card h3 {
-  margin: 0 0 7px;
+  margin: 0 0 9px;
 
-  font-size: 20px;
-
+  font-size: 21px;
   font-weight: 500;
 
-  line-height: 1.2;
+  line-height: 1.1;
+
+  letter-spacing: -0.025em;
 }
 
 
-/*
-  Country + year.
-*/
+/* Country + year */
 .film-card__meta {
-  margin: 0 0 10px;
+  margin: 0 0 15px;
 
-  font-size: 12px;
+  font-size: 10px;
+  font-weight: 500;
+
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 
-/*
-  Synopsis.
-*/
+/* Synopsis */
 .film-card__synopsis {
-  margin: 0 0 14px;
+  margin: 0 0 17px;
 
   font-size: 13px;
 
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 
 /* =========================================================
-   FILM THEMES
+   THEMES
    ========================================================= */
 
 .film-card__themes {
   display: flex;
 
+  flex-wrap: wrap;
+
   gap: 5px;
 
-  flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 
 
 .film-card__themes span {
-  padding: 4px 7px;
+  padding: 5px 8px;
 
-  border: 1px solid #aaa;
+  border: 1px solid var(--dn-grey);
 
-  font-size: 9px;
+  font-size: 8px;
+  font-weight: 600;
 
   text-transform: uppercase;
+  letter-spacing: 0.07em;
 
-  letter-spacing: 0.05em;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
 }
 
-.film-card--selected {
-  border-top: 4px solid var(--dn-green);
-  padding-top: 8px;
+
+.film-card:hover .film-card__themes span {
+  border-color: var(--dn-ink);
 }
+
+
+/* =========================================================
+   SELECT FILM BUTTON
+   ========================================================= */
+
+.film-card__select-button {
+  width: 100%;
+
+  padding: 12px 14px;
+
+  border: 1px solid var(--dn-ink);
+
+  background: transparent;
+
+  color: var(--dn-ink);
+
+  font-family: inherit;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.film-card__select-button:hover {
+  background: var(--dn-ink);
+
+  color: var(--dn-paper);
+}
+
+
+.film-card__select-button:active {
+  transform: translateY(1px);
+}
+
+
+/* =========================================================
+   SELECTED BUTTON
+   ========================================================= */
+
+.film-card--selected .film-card__select-button {
+  border-color: var(--dn-green);
+}
+
+
+.film-card--selected .film-card__select-button:hover {
+  background: var(--dn-green);
+
+  color: var(--dn-ink);
+}
+
+.film-card__featured-label {
+  position: absolute;
+
+  top: 18px;
+  left: 10px;
+
+  z-index: 2;
+
+  padding: 6px 9px;
+
+  background: var(--dn-green);
+
+  color: var(--dn-ink);
+
+  font-size: 8px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
 
 /* =========================================================
    LIST VIEW
    ========================================================= */
 
-/*
-  When displayMode === "list":
-
-  Instead of four columns,
-  the archive becomes one column.
-*/
-.archive-rail__films--list {
-  grid-template-columns: 1fr;
-}
-
-
-/*
-  Each card becomes:
-
-  POSTER | INFORMATION
-*/
 .archive-rail__films--list .film-card {
   display: grid;
 
-  grid-template-columns: 220px minmax(0, 1fr);
+  grid-template-columns: 180px 1fr;
 
-  gap: 25px;
+  gap: 30px;
+
+  padding: 25px 0;
+
+  border-top: 1px solid var(--dn-grey);
 }
 
 
-/*
-  Wider poster in List view.
-*/
+.archive-rail__films--list .film-card--selected {
+  border-top: 4px solid var(--dn-green);
+}
+
+
 .archive-rail__films--list .film-card__poster {
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 3 / 4;
 }
 
 
-/*
-  Remove the normal top padding because
-  the content is now beside the poster.
-*/
 .archive-rail__films--list .film-card__content {
   padding-top: 0;
-
-  align-self: center;
 }
 
 
-/* =========================================================
-   TABLET
-   ========================================================= */
-
-@media (max-width: 1000px) {
-
-  /*
-    Featured film becomes slightly smaller.
-  */
-  .featured-film {
-    grid-template-columns: minmax(230px, 330px) 1fr;
-
-    gap: 30px;
-  }
-
-
-  /*
-    Archive becomes two columns.
-  */
-  .archive-rail__films {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-
-  /*
-    Stack controls.
-  */
-  .archive-rail__controls {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-
-  .archive-rail__options {
-    width: 100%;
-  }
+.archive-rail__films--list .film-card__select-button {
+  max-width: 200px;
 }
 
 
@@ -646,90 +654,95 @@
 
 @media (max-width: 650px) {
 
-  /*
-    Reduce section spacing.
-  */
-  .archive-rail {
-    padding: 50px 20px;
-  }
-
-
-  /*
-    Smaller heading.
-  */
-  .archive-rail__intro h2 {
-    font-size: 36px;
-  }
-
-
-  /*
-    Featured film becomes one column.
-  */
-  .featured-film {
-    grid-template-columns: 1fr;
-
-    gap: 25px;
-
-    margin-bottom: 50px;
-
-    padding-bottom: 35px;
-  }
-
-
-  /*
-    Featured poster doesn't need to be
-    enormous on a phone.
-  */
-  .featured-film__poster {
-    max-width: 420px;
-  }
-
-
-  /*
-    One film per row.
-  */
-  .archive-rail__films {
-    grid-template-columns: 1fr;
-  }
-
-
-  /*
-    List view also becomes stacked on mobile.
-  */
   .archive-rail__films--list .film-card {
     grid-template-columns: 1fr;
+
+    gap: 18px;
   }
 
-
-  /*
-    Return to portrait poster when stacked.
-  */
   .archive-rail__films--list .film-card__poster {
-    aspect-ratio: 3 / 4;
+    max-width: 280px;
   }
 
+}
 
-  /*
-    Restore spacing above content.
-  */
-  .archive-rail__films--list .film-card__content {
-    padding-top: 15px;
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .archive-rail__controls {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
-
-  /*
-    Controls can use the full width.
-  */
-  .archive-rail__filters {
-    width: 100%;
+  .archive-rail__films {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .featured-film {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
 
-  /*
-    Let the options wrap on small screens.
-  */
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+  .archive-rail {
+    padding: 60px 20px;
+  }
+
+  .archive-rail__intro h2 {
+    font-size: 42px;
+  }
+
+  .archive-rail__intro {
+    margin-bottom: 40px;
+  }
+
+  .archive-rail__controls {
+    gap: 20px;
+  }
+
   .archive-rail__options {
     flex-wrap: wrap;
   }
-}
 
+  .featured-film {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+
+    margin-bottom: 60px;
+    padding-bottom: 50px;
+  }
+
+  .featured-film__content h2 {
+    font-size: 42px;
+  }
+
+  .archive-rail__films {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .archive-rail__films--list .film-card {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+  .archive-rail__films--list .film-card__poster {
+    max-width: 280px;
+  }
+
+}
