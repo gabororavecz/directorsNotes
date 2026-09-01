@@ -1,10 +1,9 @@
-
 // FeaturedFilm displays the film that the user has selected.
 //
-// ArchiveRail passes the selected film into this component
+// ArchiveRail will pass the selected film into this component
 // through the "film" prop.
 
-function FeaturedFilm({ film, }) {
+function FeaturedFilm({ film }) {
 
   // If there is no selected film, don't render anything.
   if (!film) {
@@ -30,7 +29,6 @@ function FeaturedFilm({ film, }) {
 
       </div>
 
-
       {/* Film information */}
       <div className="featured-film__content">
 
@@ -51,7 +49,6 @@ function FeaturedFilm({ film, }) {
         <p className="featured-film__synopsis">
           {film.synopsis}
         </p>
-
 
         {/* Themes */}
         <div className="featured-film__themes">

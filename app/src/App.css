@@ -400,6 +400,11 @@
 .film-card {
   min-width: 0;
   cursor: pointer;
+
+    border-top: 4px solid transparent;
+  padding-top: 8px;
+
+
 }
 
 .film-card:hover {
